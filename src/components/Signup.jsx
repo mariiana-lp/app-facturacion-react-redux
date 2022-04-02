@@ -23,11 +23,11 @@ const Signup = () => {
   };
   return (
     <>
-      <div className="p-4 box">
-        <h2>Registrate</h2>
+      <div className="p-4 box ">
+        <h2 className="mb-3">Registrate</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit} >
-          <Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
               placeholder="Email address"
@@ -54,7 +54,7 @@ const Signup = () => {
       </div>
 
       <div className="p-4 box mt-3 text-center">
-        Si ya tienes una cuenta<Link to="/">Iniciar Sesion</Link>
+        Si ya tienes una cuenta <Link to="/">Iniciar Sesion</Link>
       </div>
     </>
   );
