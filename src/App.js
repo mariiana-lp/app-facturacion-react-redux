@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Signup from "./components/Signup";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import ProtectedtRoute from "./components/ProtectedtRoute";
+import Clientes from "./components/Clientes";
 
 function App() {
   return (
@@ -22,6 +23,14 @@ function App() {
                 element={
                   <ProtectedtRoute>
                     <Home />
+                  </ProtectedtRoute>
+                }
+              />
+              <Route
+                path="clientes"
+                element={
+                  <ProtectedtRoute>
+                    <Clientes />
                   </ProtectedtRoute>
                 }
               />

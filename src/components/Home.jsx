@@ -3,6 +3,7 @@ import { Button} from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
 import Navbar from "./Navbar";
 
+
 const Home = () => {
     const {user, logOut} = useUserAuth();
     console.log(user);
