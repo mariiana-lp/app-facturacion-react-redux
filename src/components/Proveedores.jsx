@@ -51,7 +51,7 @@ function Proveedores() {
     <>
       <Navbar />
       <div className="m-3">
-      <h3>Proveedores</h3>
+      <h3> <center>Proveedores</center> </h3>
      <DataTable 
       columns={columns}
       data={proveedor}

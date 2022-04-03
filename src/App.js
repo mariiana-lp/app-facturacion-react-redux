@@ -11,6 +11,7 @@ import Clientes from "./components/Clientes";
 import Proveedores from "./components/Proveedores";
 import Inventario from "./components/Inventario";
 import HistoricoVentas from "./components/HistoricoVentas";
+import NuevoCliente from "./components/NuevoCliente";
 
 function App() {
   return (
@@ -58,6 +59,14 @@ function App() {
                 element={
                   <ProtectedtRoute>
                     <HistoricoVentas />
+                  </ProtectedtRoute>
+                }
+              />
+              <Route
+                path="nuevoCliente"
+                element={
+                  <ProtectedtRoute>
+                    <NuevoCliente />
                   </ProtectedtRoute>
                 }
               />

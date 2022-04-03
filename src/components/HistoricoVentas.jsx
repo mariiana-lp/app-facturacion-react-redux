@@ -26,12 +26,8 @@ function HistoricoVentas() {
       selector: (row) => row.fecha,
     },
     {
-      name: "Productos vendidos",
-      selector: (row) => row.productos,
-    },
-    {
       name: "Total Pagado",
-      selector: (row) => row.productos,
+      selector: (row) => row.totalAPagar,
     },
     
   ];
@@ -44,7 +40,7 @@ function HistoricoVentas() {
     <>
       <Navbar />
       <div className="m-3">
-        <h3>Historico de Ventas</h3>
+        <h3><center>Historico de Ventas</center> </h3>
         <DataTable columns={columns} data={ventas} pagination />
       </div>
     </>

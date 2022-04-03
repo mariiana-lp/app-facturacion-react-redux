@@ -51,7 +51,7 @@ function Inventario() {
     <>
       <Navbar />
       <div className="m-3">
-        <h3>Inventario</h3>
+        <h3> <center>Inventario</center> </h3>
         <DataTable columns={columns} data={productos} pagination />
       </div>
     </>
