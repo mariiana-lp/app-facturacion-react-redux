@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import ProtectedtRoute from "./components/ProtectedtRoute";
 import Clientes from "./components/Clientes";
+import Proveedores from "./components/Proveedores";
 
 function App() {
   return (
@@ -31,6 +32,14 @@ function App() {
                 element={
                   <ProtectedtRoute>
                     <Clientes />
+                  </ProtectedtRoute>
+                }
+              />
+               <Route
+                path="proveedores"
+                element={
+                  <ProtectedtRoute>
+                    <Proveedores />
                   </ProtectedtRoute>
                 }
               />

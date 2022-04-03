@@ -3,14 +3,14 @@ import Navbar from "./Navbar";
 import DataTable from "react-data-table-component";
 
 
-export default function Clientes() {
-  const [clientes, setClientes] = useState([]);
-  const URL = "http://localhost:8081/clientes";
+function Proveedores() {
+  const [proveedor, setProveedor] = useState([]);
+  const URL = "http://localhost:8081/proveedores";
   const showData = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     console.log(data);
-    setClientes(data);
+    setProveedor(data);
   };
 
   useEffect( ()=>{
@@ -40,7 +40,7 @@ export default function Clientes() {
 
   const MyComponent = () => (
     <DataTable
-      title="Clientes"
+      title="Proveedores"
       columns={columns}
       theme="solarized"
     />
@@ -51,13 +51,15 @@ export default function Clientes() {
     <>
       <Navbar />
       <div className="m-3">
-      <h3>Clientes</h3>
+      <h3>Proveedores</h3>
      <DataTable 
       columns={columns}
-      data={clientes}
+      data={proveedor}
       pagination
      />
     </div>
     </>
   );
 }
+
+export default Proveedores;
