@@ -31,7 +31,7 @@ function NuevoProveedor() {
     <>
       <Navbar />
       <div className="p-4 box">
-        <h2 className="m-5">Datos del Cliente</h2>
+        <h2 className="m-5">Datos del Proveedor</h2>
         <Form className="m-5" onSubmit={(e)=> submit(e)}>
           <Form.Group>
             <Form.Control type="text" placeholder="Nombre"  
