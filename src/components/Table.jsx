@@ -1,16 +1,14 @@
-import React,{useState, useEffect} from "react";
-import Navbar from "./Navbar";
 import DataTable from "react-data-table-component";
+import React,{useState, useEffect} from "react";
 
-
-export default function Clientes() {
-  const [clientes, setClientes] = useState([]);
-  const URL = "http://localhost:8081/clientes";
+const Table = () => {
+  const [productos, setProductos] = useState([]);
+  const URL = "http://localhost:8081/product";
   const showData = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     console.log(data);
-    setClientes(data);
+    setProductos(data);
   };
 
   useEffect( ()=>{
@@ -23,42 +21,36 @@ export default function Clientes() {
       selector: row => row.id
     },
     {
-      name: 'Nombre',
-      selector: row => row.nombre
+      name: 'Nombre Producto',
+      selector: row => row.nombreProducto
     },
     {
-      name: 'Telefono',
-      selector: row => row.telefono
-    },
-
-    {
-      name: 'Dirección',
-      selector: row => row.direccion
+      name: 'Precio Unidad',
+      selector: row => row.precioUnidad
     },
 
   ]
 
   const MyComponent = () => (
     <DataTable
-      title="Clientes"
+      title="Productos"
       columns={columns}
       theme="solarized"
     />
   );
 
 
-  return (
-    <>
-      <Navbar />
-      <div className="m-3">
-      <h3>Clientes</h3>
+  return(
+    <div className="m-3">
+      <h3>Productos</h3>
      <DataTable 
       columns={columns}
-      data={clientes}
+      data={productos}
       //theme='custom' //habilitar esta linea y descomentar createTheme()
       pagination
      />
     </div>
-    </>
   );
-}
+};
+
+export default Table;
