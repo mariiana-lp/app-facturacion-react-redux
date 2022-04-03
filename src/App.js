@@ -10,6 +10,7 @@ import ProtectedtRoute from "./components/ProtectedtRoute";
 import Clientes from "./components/Clientes";
 import Proveedores from "./components/Proveedores";
 import Inventario from "./components/Inventario";
+import HistoricoVentas from "./components/HistoricoVentas";
 
 function App() {
   return (
@@ -49,6 +50,14 @@ function App() {
                 element={
                   <ProtectedtRoute>
                     <Inventario />
+                  </ProtectedtRoute>
+                }
+              />
+              <Route
+                path="ventas"
+                element={
+                  <ProtectedtRoute>
+                    <HistoricoVentas />
                   </ProtectedtRoute>
                 }
               />
