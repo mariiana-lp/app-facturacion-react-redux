@@ -48,7 +48,7 @@ function Proveedores() {
       <div className="m-3">
         <h3>
           {" "}
-          <center>Proveedores</center>{" "}
+          <center>PROVEEDORES</center>{" "}
         </h3>
         <DataTable columns={columns} data={proveedor} pagination />
       </div>

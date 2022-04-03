@@ -40,7 +40,7 @@ function HistoricoVentas() {
     <>
       <Navbar />
       <div className="m-3">
-        <h3><center>Historico de Ventas</center> </h3>
+        <h3><center>HISTORICO DE VENTAS</center> </h3>
         <DataTable columns={columns} data={ventas} pagination />
       </div>
     </>
