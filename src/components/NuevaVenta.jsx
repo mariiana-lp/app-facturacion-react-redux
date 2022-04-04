@@ -36,24 +36,25 @@ function NuevoProveedor() {
         <h2 className="m-5">Venta</h2>
         <Form className="m-5" onSubmit={(e)=> submit(e)}>
           <Form.Group>
-            <Form.Control type="date" placeholder="fecha"  
+            <Form.Control type="date" placeholder="fecha"  className="mb-3"
             onChange={(e) => handle(e)} id="fecha" value={data.fecha} />
           </Form.Group>
 
           <Form.Group>
-            <Form.Control type="text" placeholder="nombreCliente"
+            <Form.Control type="text" placeholder="nombreCliente" className="mb-3"
             onChange={(e) => handle(e)} id="nombreCliente" value={data.nombreCliente}  />
           </Form.Group>
 
           <Form.Group>
-            <Form.Control type="text" placeholder="vendedor" 
+            <Form.Control type="text" placeholder="vendedor"  className="mb-3"
             onChange={(e) => handle(e)} id="vendedor" value={data.vendedor} />
           </Form.Group>
 
           <Form.Group>
-            <Form.Control type="number" placeholder="totalPagado" 
+            <Form.Control type="number" placeholder="totalPagado" className="mb-3"
             onChange={(e) => handle(e)} id="totalPagado" value={data.totalPagado} />
           </Form.Group>
+
           <div className="d-grid gap-2 mt-3">
             <Button variant="primary" type="Submit">
               Guardar

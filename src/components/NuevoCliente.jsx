@@ -34,17 +34,17 @@ function NuevoCliente() {
         <h2 className="m-5">Datos del Cliente</h2>
         <Form className="m-5" onSubmit={(e)=> submit(e)}>
           <Form.Group>
-            <Form.Control type="text" placeholder="Nombre"  
+            <Form.Control type="text" placeholder="Nombre"  className="mb-3"
             onChange={(e) => handle(e)} id="nombre" value={data.nombre} />
           </Form.Group>
 
           <Form.Group>
-            <Form.Control type="text" placeholder="Telefono"
+            <Form.Control type="text" placeholder="Telefono" className="mb-3"
             onChange={(e) => handle(e)} id="telefono" value={data.telefono}  />
           </Form.Group>
 
           <Form.Group>
-            <Form.Control type="text" placeholder="Direccion" 
+            <Form.Control type="text" placeholder="Direccion" className="mb-3"
             onChange={(e) => handle(e)} id="direccion" value={data.direccion} />
           </Form.Group>
           <div className="d-grid gap-2 mt-3">

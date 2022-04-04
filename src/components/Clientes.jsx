@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import {Spinner} from "reactstrap";
+
 
 export default function Clientes() {
   const [clientes, setClientes] = useState([]);
@@ -13,6 +14,7 @@ export default function Clientes() {
     console.log(data);
     setClientes(data);
   };
+
 
   useEffect(() => {
     showData();
@@ -49,7 +51,7 @@ export default function Clientes() {
         <h3>
           <center>CLIENTES</center>
         </h3>
-        <DataTable columns={columns} data={clientes} pagination />
+        <DataTable columns={columns} data={clientes} pagination/>
         <div className="p-4 box mt-3 text-left">
           <Link className="btn btn-primary"
            to="/nuevoCliente">Agregar Cliente</Link>
