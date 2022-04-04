@@ -26,10 +26,17 @@ function HistoricoVentas() {
       selector: (row) => row.fecha,
     },
     {
+      name: "Cliente",
+      selector: (row) => row.nombreCliente,
+    },
+    {
+      name: "Vendedor",
+      selector: (row) => row.vendedor,
+    },
+    {
       name: "Total Pagado",
       selector: (row) => row.totalAPagar,
     },
-    
   ];
 
   const MyComponent = () => (

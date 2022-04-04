@@ -2,8 +2,8 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mx-3">
-      <a className="navbar-brand text-uppercase" href="/home">
+    <nav className="navbar navbar-expand-lg navbar-light mx-3" >
+      <a className="navbar-brand text-uppercase mx-3" href="/home">
         Ferreteria Don Raul
       </a>
 

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import { Form } from "react-bootstrap";
 import Navbar from "./Navbar";
 import { Button } from "react-bootstrap";
 import Axios from "axios";
+import SelectProductos from "./SelectProductos";
 
-function NuevoProveedor() {
+function NuevaVentana() {
     const url = "http://localhost:8081/f"
     const [data, setData] = useState({
         fecha:"",
@@ -54,7 +55,11 @@ function NuevoProveedor() {
             <Form.Control type="number" placeholder="totalPagado" className="mb-3"
             onChange={(e) => handle(e)} id="totalPagado" value={data.totalPagado} />
           </Form.Group>
-
+          <label>Productos:</label>
+          <SelectProductos />
+          <SelectProductos />
+          <SelectProductos />
+          <SelectProductos />
           <div className="d-grid gap-2 mt-3">
             <Button variant="primary" type="Submit">
               Guardar
@@ -66,4 +71,4 @@ function NuevoProveedor() {
   );
 }
 
-export default NuevoProveedor;
+export default NuevaVentana;
