@@ -5,11 +5,12 @@ import GoogleButton from "react-google-button";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../context/UserAuthContext";
 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { logIn, googleSignIn } = useUserAuth();
+  const { logIn, googleSignIn, signInWithGitHub } = useUserAuth();
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,6 +32,16 @@ const Login = () => {
       setError(err.message);
     }
   };
+
+  const gitHubSignIn = async(e) => {
+    e.preventDefault();
+    try {
+      await signInWithGitHub();
+      navigate("/home");
+    } catch (error) {
+          setError(error.message)
+    }};
+    
 
   return (
     <>
@@ -71,6 +82,11 @@ const Login = () => {
             type="dark"
             onClick={handleGoogleSignIn}
           />
+        </div>
+        <div>
+          <Button className="mt-5" onClick={gitHubSignIn} type="button">
+            Sign in with GitHub
+          </Button>
         </div>
       </div>
       <div className="p-4 box mt-3 text-center">
