@@ -5,29 +5,32 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../context/UserAuthContext";
 import { async } from "@firebase/util";
 
-
 const Signup = () => {
-  const[email, setEmail] = useState("");
-  const[password, setPassword] = useState("");
-  const[error, setError] = useState("");
-  const{signUp} = useUserAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { signUp } = useUserAuth();
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    try{
+    try {
       await signUp(email, password);
       navigate("/");
-    } catch(err){
+    } catch (err) {
       setError(err.message);
     }
   };
   return (
     <>
       <div className="p-4 box ">
-        <h2 className="mb-3">Registrate</h2>
+        <h2>
+          {" "}
+          <center>FERRETERIA "DON RAUL"</center>{" "}
+        </h2>
+        <h5 className="mb-3">Registrate</h5>
         {error && <Alert variant="danger">{error}</Alert>}
-        <Form onSubmit={handleSubmit} >
+        <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
@@ -41,7 +44,6 @@ const Signup = () => {
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
-              
             />
           </Form.Group>
 
@@ -50,7 +52,6 @@ const Signup = () => {
               Registrarse
             </Button>
           </div>
-
         </Form>
       </div>
 
